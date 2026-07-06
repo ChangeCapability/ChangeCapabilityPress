@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head> 
+<head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Change Capability Press — Books for Uncertain Times</title>
@@ -63,10 +63,6 @@
   /* Hero */
   .hero{
     padding:96px 0 64px;
-    display:grid;
-    grid-template-columns:1.1fr 0.9fr;
-    gap:56px;
-    align-items:center;
   }
   .eyebrow{
     font-size:13px; letter-spacing:0.14em; text-transform:uppercase;
@@ -78,6 +74,7 @@
     font-size:clamp(2.4rem, 4.6vw, 3.6rem);
     line-height:1.08;
     letter-spacing:-0.01em;
+    max-width:20ch;
   }
   h1 em{
     font-style:italic; font-weight:600; color:var(--blue);
@@ -85,12 +82,6 @@
   .hero p.lede{
     margin-top:22px; font-size:18px; color:var(--muted); max-width:46ch;
   }
-  .hero-figure{position:relative; display:flex; justify-content:center;}
-  .rings{width:min(320px, 100%); height:auto;}
-  .rings path, .rings circle{
-    fill:none; stroke:var(--peach); stroke-width:10; stroke-linecap:round;
-  }
-  .footprints{width:34px; margin-top:-6px; opacity:0.75;}
 
   /* Section shell */
   section{padding:72px 0;}
@@ -208,9 +199,7 @@
   .footer-meta a{text-decoration:underline; text-underline-offset:3px;}
 
   @media (max-width:860px){
-    .hero{grid-template-columns:1fr; padding-top:64px;}
-    .hero-figure{order:-1;}
-    .rings{width:180px;}
+    .hero{padding-top:64px;}
     .featured{grid-template-columns:1fr;}
     .featured .cover-frame{max-width:280px; margin:0 auto;}
     .cat-grid{grid-template-columns:1fr;}
@@ -244,13 +233,6 @@
       <h1>Books for the parts of change that <em>don't come with instructions.</em></h1>
       <p class="lede">We publish non-fiction that builds resilience and the capability to grow — for individuals, leaders and teams navigating uncertainty, ambiguity and change.</p>
     </div>
-    <div class="hero-figure">
-      <svg class="rings" viewBox="0 0 300 340" aria-hidden="true">
-        <circle cx="150" cy="150" r="130"/>
-        <circle cx="150" cy="150" r="90"/>
-        <circle cx="150" cy="150" r="50"/>
-      </svg>
-    </div>
   </div>
 
   <div class="mission">
@@ -274,7 +256,7 @@
         <h3>The Little Book <em>of Uncertainty</em></h3>
         <p class="subtitle">For Those of Us Who Love a Little Hindsight (in Advance)</p>
         <p class="desc">A companion for anyone standing in the in-between — reflective, honest, and built for the moments when the next step isn't clear yet.</p>
-        <a class="btn" href="https://www.amazon.com.au/stores/author/B0DQVJ8FMM/allbooks?_encoding=UTF8&ref_=aufs_ap_ahdr_dsk_ab&pd_rd_w=fT22k&content-id=amzn1.sym.b4344408-bcb0-46d7-b9b0-ac31160009fa&pf_rd_p=b4344408-bcb0-46d7-b9b0-ac31160009fa&pf_rd_r=356-4264792-5631661&pd_rd_wg=zb4tT&pd_rd_r=9b702933-3e90-4c63-9a32-65140e491c65" target="_blank" rel="noopener">
+        <a class="btn" href="https://www.amazon.com.au/stores/author/B0DQVJ8FMM/allbooks?ingress=0&visitId=7b916a5b-5bf1-4ee0-9b3a-9971c53b797e&ref_=aufs_ap_ahdr_dsk_ab" target="_blank" rel="noopener">
           Find our books on Amazon
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
         </a>
@@ -317,7 +299,7 @@
   <section id="about" class="mission" style="padding:0;">
     <div class="wrap" style="padding:64px 32px;">
       <p class="eyebrow">About the press</p>
-      <h2 style="margin-top:8px;">Grounded in the psychology of change</h2>
+      <h2 style="margin-top:8px;">Grounded in psychology, neuroscience, best practice and stories from the ground</h2>
       <p style="margin-top:18px; font-family:var(--sans); font-style:normal; font-size:16px; color:var(--muted); max-width:60ch;">
         Change Capability Press is the publishing imprint of Change Capability, working at the intersection of organisational psychology, change management and transformational coaching. Every title is written to be used — in a team meeting, a one-to-one, or on your own.
       </p>
