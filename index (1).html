@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Change Capability Press — Books for Uncertain Times</title>
+<meta name="description" content="Change Capability Press publishes non-fiction books, card decks and journals that build resilience and the capability to grow through uncertainty, ambiguity and change.">
+<link rel="icon" href="images/logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink:#1c1c1e;
+    --blue:#365ac4;
+    --peach:#ffba9d;
+    --peach-tint:#fff6f1;
+    --muted:#6d6d72;
+    --bg:#ffffff;
+    --rule:#e8e6e1;
+    --serif:'Source Serif 4', Georgia, serif;
+    --sans:'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--bg);
+    color:var(--ink);
+    font-family:var(--sans);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 32px;}
+
+  /* Nav */
+  header{
+    position:sticky; top:0; z-index:50;
+    background:rgba(255,255,255,0.92);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--rule);
+  }
+  .nav{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:18px 32px;
+    max-width:1120px; margin:0 auto;
+  }
+  .brand{display:flex; align-items:center; gap:12px; text-decoration:none;}
+  .brand img{height:34px; width:34px;}
+  .brand span{
+    font-family:var(--serif); font-weight:600; font-size:17px;
+    letter-spacing:0.02em;
+  }
+  .nav-links{display:flex; gap:32px; font-size:15px;}
+  .nav-links a{text-decoration:none; color:var(--ink); position:relative;}
+  .nav-links a:hover{color:var(--blue);}
+  .nav-links a:focus-visible, .brand:focus-visible, .btn:focus-visible{
+    outline:2px solid var(--blue); outline-offset:3px; border-radius:2px;
+  }
+  .menu-toggle{display:none;}
+
+  /* Hero */
+  .hero{
+    padding:96px 0 64px;
+    display:grid;
+    grid-template-columns:1.1fr 0.9fr;
+    gap:56px;
+    align-items:center;
+  }
+  .eyebrow{
+    font-size:13px; letter-spacing:0.14em; text-transform:uppercase;
+    color:var(--blue); font-weight:600; margin-bottom:18px;
+  }
+  h1{
+    font-family:var(--serif);
+    font-weight:700;
+    font-size:clamp(2.4rem, 4.6vw, 3.6rem);
+    line-height:1.08;
+    letter-spacing:-0.01em;
+  }
+  h1 em{
+    font-style:italic; font-weight:600; color:var(--blue);
+  }
+  .hero p.lede{
+    margin-top:22px; font-size:18px; color:var(--muted); max-width:46ch;
+  }
+  .hero-figure{position:relative; display:flex; justify-content:center;}
+  .rings{width:min(320px, 100%); height:auto;}
+  .rings path, .rings circle{
+    fill:none; stroke:var(--peach); stroke-width:10; stroke-linecap:round;
+  }
+  .footprints{width:34px; margin-top:-6px; opacity:0.75;}
+
+  /* Section shell */
+  section{padding:72px 0;}
+  .section-head{max-width:56ch; margin-bottom:40px;}
+  .section-head .eyebrow{margin-bottom:10px;}
+  h2{
+    font-family:var(--serif); font-weight:700;
+    font-size:clamp(1.6rem, 2.6vw, 2.1rem);
+    line-height:1.2;
+  }
+  .rule-divider{
+    border:none; height:1px; background:var(--rule); margin:0;
+  }
+
+  /* Mission strip */
+  .mission{background:var(--peach-tint); border-top:1px solid var(--rule); border-bottom:1px solid var(--rule);}
+  .mission .wrap{padding:56px 32px;}
+  .mission p{
+    font-family:var(--serif); font-style:italic; font-weight:400;
+    font-size:clamp(1.15rem, 2vw, 1.4rem);
+    max-width:62ch; color:var(--ink);
+  }
+  .audience-tags{display:flex; gap:12px; margin-top:28px; flex-wrap:wrap;}
+  .audience-tags span{
+    font-family:var(--sans); font-size:13px; font-weight:600;
+    padding:8px 16px; border:1px solid var(--blue); border-radius:100px;
+    color:var(--blue);
+  }
+
+  /* Featured / hotspot */
+  .featured{
+    display:grid; grid-template-columns:0.8fr 1.2fr; gap:56px; align-items:center;
+  }
+  .featured .cover-frame{
+    background:var(--peach-tint);
+    padding:28px;
+    border-radius:4px;
+  }
+  .featured .cover-frame img{
+    box-shadow:0 18px 40px -18px rgba(28,28,30,0.35);
+  }
+  .featured-label{
+    font-size:13px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--peach); font-weight:600; margin-bottom:14px;
+  }
+  .featured h3{
+    font-family:var(--serif); font-weight:700;
+    font-size:clamp(1.6rem, 3vw, 2.3rem);
+    line-height:1.15;
+  }
+  .featured h3 em{font-style:italic; color:var(--blue); font-weight:600;}
+  .featured .subtitle{
+    font-family:var(--serif); font-style:italic; color:var(--muted);
+    font-size:1.15rem; margin-top:10px;
+  }
+  .featured p.desc{margin-top:20px; color:var(--muted); max-width:48ch;}
+  .btn{
+    display:inline-flex; align-items:center; gap:10px;
+    background:var(--blue); color:#fff; text-decoration:none;
+    font-weight:600; font-size:15px;
+    padding:14px 26px; border-radius:4px; margin-top:28px;
+    transition:transform 0.15s ease, box-shadow 0.15s ease;
+  }
+  .btn:hover{transform:translateY(-1px); box-shadow:0 10px 24px -12px rgba(54,90,196,0.55);}
+  .btn svg{width:15px; height:15px;}
+
+  /* Catalogue grid */
+  .cat-grid{
+    display:grid; grid-template-columns:repeat(3, 1fr); gap:1px;
+    background:var(--rule);
+    border:1px solid var(--rule);
+  }
+  .cat-card{
+    background:#fff; padding:36px 32px; min-height:220px;
+    display:flex; flex-direction:column;
+  }
+  .cat-card .tag{
+    font-size:12px; font-weight:600; letter-spacing:0.1em; text-transform:uppercase;
+    color:var(--muted); margin-bottom:auto;
+  }
+  .cat-card.soon .tag{color:var(--peach);}
+  .cat-card h4{
+    font-family:var(--serif); font-weight:600; font-size:1.3rem; margin-top:20px;
+  }
+  .cat-card p{font-size:14.5px; color:var(--muted); margin-top:8px;}
+  .cat-card .badge{
+    display:inline-block; margin-top:16px; font-size:12px; font-weight:600;
+    color:var(--peach); border:1px solid var(--peach); border-radius:100px;
+    padding:4px 12px; width:fit-content;
+  }
+  .cat-card .badge-link{
+    color:var(--blue); border-color:var(--blue); text-decoration:none;
+    transition:background 0.15s ease, color 0.15s ease;
+  }
+  .cat-card .badge-link:hover{background:var(--blue); color:#fff;}
+
+  /* Submissions */
+  .submissions{
+    background:var(--ink); color:#f4f2ef;
+  }
+  .submissions .wrap{padding:64px 32px;}
+  .submissions .eyebrow{color:var(--peach);}
+  .submissions h2{color:#fff;}
+  .submissions p{color:#c9c8c6; max-width:52ch; margin-top:16px;}
+
+  /* Footer */
+  footer{padding:48px 0 40px;}
+  .footer-grid{
+    display:flex; justify-content:space-between; align-items:flex-end; flex-wrap:wrap; gap:24px;
+  }
+  .footer-brand{display:flex; align-items:center; gap:12px;}
+  .footer-brand img{height:28px; width:28px;}
+  .footer-brand span{font-family:var(--serif); font-weight:600;}
+  .footer-meta{text-align:right; font-size:13.5px; color:var(--muted);}
+  .footer-meta a{text-decoration:underline; text-underline-offset:3px;}
+
+  @media (max-width:860px){
+    .hero{grid-template-columns:1fr; padding-top:64px;}
+    .hero-figure{order:-1;}
+    .rings{width:180px;}
+    .featured{grid-template-columns:1fr;}
+    .featured .cover-frame{max-width:280px; margin:0 auto;}
+    .cat-grid{grid-template-columns:1fr;}
+    .nav-links{display:none;}
+    .footer-grid{flex-direction:column; align-items:flex-start;}
+    .footer-meta{text-align:left;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="nav">
+    <a class="brand" href="#top">
+      <img src="images/logo.png" alt="Change Capability Press logo">
+      <span>Change Capability Press</span>
+    </a>
+    <div class="nav-links">
+      <a href="#catalogue">Catalogue</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </nav>
+</header>
+
+<main id="top">
+
+  <div class="wrap hero">
+    <div>
+      <p class="eyebrow">Change Capability Press</p>
+      <h1>Books for the parts of change that <em>don't come with instructions.</em></h1>
+      <p class="lede">We publish non-fiction that builds resilience and the capability to grow — for individuals, leaders and teams navigating uncertainty, ambiguity and change.</p>
+    </div>
+    <div class="hero-figure">
+      <svg class="rings" viewBox="0 0 300 340" aria-hidden="true">
+        <circle cx="150" cy="150" r="130"/>
+        <circle cx="150" cy="150" r="90"/>
+        <circle cx="150" cy="150" r="50"/>
+      </svg>
+    </div>
+  </div>
+
+  <div class="mission">
+    <div class="wrap">
+      <p>&ldquo;We write for the in-between phase — the space after certainty and before the next steady thing.&rdquo;</p>
+      <div class="audience-tags">
+        <span>Individuals</span>
+        <span>Leaders</span>
+        <span>Teams</span>
+      </div>
+    </div>
+  </div>
+
+  <section id="featured">
+    <div class="wrap featured">
+      <div class="cover-frame">
+        <img src="images/little-book-of-uncertainty.png" alt="Cover of The Little Book of Uncertainty by Mona Momtazian">
+      </div>
+      <div>
+        <p class="featured-label">Featured Title</p>
+        <h3>The Little Book <em>of Uncertainty</em></h3>
+        <p class="subtitle">For Those of Us Who Love a Little Hindsight (in Advance)</p>
+        <p class="desc">A companion for anyone standing in the in-between — reflective, honest, and built for the moments when the next step isn't clear yet.</p>
+        <a class="btn" href="https://www.amazon.com.au/stores/author/B0DQVJ8FMM/allbooks?_encoding=UTF8&ref_=aufs_ap_ahdr_dsk_ab&pd_rd_w=fT22k&content-id=amzn1.sym.b4344408-bcb0-46d7-b9b0-ac31160009fa&pf_rd_p=b4344408-bcb0-46d7-b9b0-ac31160009fa&pf_rd_r=356-4264792-5631661&pd_rd_wg=zb4tT&pd_rd_r=9b702933-3e90-4c63-9a32-65140e491c65" target="_blank" rel="noopener">
+          Find our books on Amazon
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M7 7h10v10"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <hr class="rule-divider">
+
+  <section id="catalogue">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="eyebrow">Catalogue</p>
+        <h2>What we publish</h2>
+      </div>
+    </div>
+    <div class="wrap" style="padding:0 32px;">
+      <div class="cat-grid">
+        <div class="cat-card">
+          <p class="tag">Available now</p>
+          <h4>Books</h4>
+          <p>Non-fiction for the moments when things feel uncertain, ambiguous or in motion — for yourself, your team, or the people you lead.</p>
+        </div>
+        <div class="cat-card">
+          <p class="tag">Available now</p>
+          <h4>Card Decks</h4>
+          <p>Facilitation and reflection decks built for coaching conversations, team sessions and quiet personal check-ins.</p>
+          <a class="badge badge-link" href="https://www.changecapabilitystore.com" target="_blank" rel="noopener">Shop card decks</a>
+        </div>
+        <div class="cat-card soon">
+          <p class="tag">In development</p>
+          <h4>Journals</h4>
+          <p>Guided journals for working through change in your own hand, at your own pace.</p>
+          <span class="badge">Coming soon</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="mission" style="padding:0;">
+    <div class="wrap" style="padding:64px 32px;">
+      <p class="eyebrow">About the press</p>
+      <h2 style="margin-top:8px;">Grounded in the psychology of change</h2>
+      <p style="margin-top:18px; font-family:var(--sans); font-style:normal; font-size:16px; color:var(--muted); max-width:60ch;">
+        Change Capability Press is the publishing imprint of Change Capability, working at the intersection of organisational psychology, change management and transformational coaching. Every title is written to be used — in a team meeting, a one-to-one, or on your own.
+      </p>
+    </div>
+  </section>
+
+  <section class="submissions" id="submissions">
+    <div class="wrap">
+      <p class="eyebrow">Submissions</p>
+      <h2>Not accepting new proposals</h2>
+      <p>We're not currently reviewing manuscript or card deck proposals. If that changes, it will be posted here first.</p>
+    </div>
+  </section>
+
+</main>
+
+<footer id="contact">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      <img src="images/logo.png" alt="Change Capability Press logo">
+      <span>Change Capability Press</span>
+    </div>
+    <div class="footer-meta">
+      <p><a href="mailto:hello@changecapability.com.au">hello@changecapability.com.au</a></p>
+      <p style="margin-top:6px;">&copy; 2026 Change Capability Press. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
